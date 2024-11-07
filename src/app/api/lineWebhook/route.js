@@ -582,16 +582,14 @@ export async function POST(req, res) {
 
               case "本日":
                 const today = new Date();
-
                 // today +8 小時
+                today.setHours(today.getHours() + 8);
                 // 設置今天的起始時間（00:00:00.000）並加上 8 小時
                 const startOfDay = new Date(today.setHours(0, 0, 0, 0));
-                startOfDay.setHours(startOfDay.getHours() + 8);
 
                 // 結束日期 +8 小時
                 // 設置今天的結束時間（23:59:59.999）並加上 8 小時
                 const endOfDay = new Date(today.setHours(23, 59, 59, 999));
-                endOfDay.setHours(endOfDay.getHours() + 8);
 
                 console.log("startOfDay", startOfDay);
                 console.log("endOfDay", endOfDay);
