@@ -52,6 +52,8 @@ export async function POST(req, res) {
           else if (userSession?.status === "addingTodoDate") {
             // 處理輸入日期，例如 "2024-11-01"
             const dueDate = new Date(message.text);
+            // dueDate +8 小時
+            const endDate = dueDate.setHours(dueDate.getHours() + 8);
 
             // 不是正確的日期格式
             if (isNaN(dueDate.getTime())) {
@@ -76,7 +78,7 @@ export async function POST(req, res) {
                 title: title,
                 userId: userId,
                 createdAt: dueDate,
-                updateAt: dueDate,
+                updateAt: endDate,
               });
               await newTodo.save();
               replyMessage = [
