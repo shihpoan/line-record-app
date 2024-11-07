@@ -593,6 +593,9 @@ export async function POST(req, res) {
                 const endOfDay = new Date(today.setHours(23, 59, 59, 999));
                 endOfDay.setHours(endOfDay.getHours() + 8);
 
+                console.log("startOfDay", startOfDay);
+                console.log("endOfDay", endOfDay);
+
                 // 查詢本日待辦事項
                 const pendingTodayTodos = await todoModel
                   .find({
