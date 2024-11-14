@@ -18,9 +18,9 @@ export async function POST(req, res) {
         const { message, replyToken, source } = event;
         const userId = source.userId;
 
-        console.log("message", message);
-
+        // 如果是文字訊息
         if (message.type === "text") {
+          // 預設回覆訊息
           let replyMessage = "";
 
           // 從 Redis 獲取用戶的 session 狀態
