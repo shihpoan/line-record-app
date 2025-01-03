@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@notionhq/client": "^2.2.15",
     "dotenv": "^16.4.5",
     "ioredis": "^5.4.1",
     "mongoose": "^8.8.0",
