@@ -134,6 +134,7 @@ async function sendMessageToLine(phoneNumber, messageText) {
 // 根據電話號碼查詢 LINE userId
 async function getLineUserIdByPhone(phoneNumber) {
   try {
+    await connectDB();
     // 在資料庫中查找對應電話號碼的使用者
     const user = await userModel.findOne({ phoneNumber: phoneNumber });
 
