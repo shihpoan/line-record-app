@@ -5,8 +5,8 @@
   "scripts": {
     "dev": "next dev -p 8888 --turbopack",
     "build": "next build",
-    "start": "next start",
-    "pm2start": "next build && next start -p 8888",
+    "start": "next build && next start -p 8888",
+    "pm2start": "pm2 start npm --name \"NOTIOLINENEXT\" -- start",
     "lint": "next lint"
   },
   "dependencies": {
