@@ -38,9 +38,6 @@ export async function POST(request) {
       // 今天日期
       const today = new Date().toISOString().split("T")[0];
       // console.log("today", today);
-
-      console.log("dates", data.properties["預計執行日期"]["date"]);
-
       // 完成日期是否 == 今天
       const isToday =
         (data.properties["完成日期"]["date"]
